@@ -2,7 +2,13 @@ import cv2
 import os
 import numpy as np
 
-dataPath = 'C:/Users/Enmanuel/PycharmProjects/Proyecto-Final-prog3/p/ReconocimientoFacial/Caras'
+# Ruta del archivo actualmente en ejecución
+current_file_path = os.path.abspath(__file__)
+
+# Directorio del archivo actual sin incluir el nombre del archivo
+current_directory = os.path.dirname(current_file_path)
+
+dataPath = current_directory+'/Caras'
 peopleList = os.listdir(dataPath)
 print('Lista de personas: ', peopleList)
 
@@ -25,7 +31,6 @@ for nameDir in peopleList:
 
 # Métodos para entrenar el reconocedor
 face_recognizer = cv2.face.EigenFaceRecognizer_create()
-
 
 # Entrenando el reconocedor de rostros
 print("Entrenando...")

@@ -1,7 +1,13 @@
 import cv2
 import os
 
-dataPath = 'C:/Users/Enmanuel/PycharmProjects/Proyecto-Final-prog3/p/ReconocimientoFacial/Caras'
+# Ruta del archivo actualmente en ejecución
+current_file_path = os.path.abspath(__file__)
+
+# Directorio del archivo actual sin incluir el nombre del archivo
+current_directory = os.path.dirname(current_file_path)
+
+dataPath = current_directory+'/Caras'
 imagePaths = os.listdir(dataPath)
 print('imagePaths=', imagePaths)
 
